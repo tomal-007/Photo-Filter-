@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Jawad\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Jawad\AndroidStudioProjects\MashMoment3\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_3acc8946e88a0a458687dda8d7d027fe58a024a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Jawad\.android\build-cache\c26b152343153802b67761b56b24bec56b3f3038\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Jawad\AndroidStudioProjects\MashMoment3\app\build\intermediates\pre-dexed\debug\classes_ed6f1aa637797ee0ead43e93796a0686050b2bd4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Jawad\AndroidStudioProjects\MashMoment3\app\libs\glide-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a7537446a030da8eb0da4c71424d16c2589f6c4a">
+        <dex dex="C:\Users\Jawad\AndroidStudioProjects\MashMoment3\app\build\intermediates\pre-dexed\debug\glide-3.6.0_11126d14908e6f10556fc78a4a017814752079b0.jar" />
+    </item>
+
+</items>

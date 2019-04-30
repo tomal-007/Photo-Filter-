@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/transparent" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Saved Successfully"
+        android:textAlignment="center"
+        android:background="@android:color/transparent"
+        android:textSize="30dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap anywhere on the screen to continue"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/white"
+        />
+</LinearLayout>

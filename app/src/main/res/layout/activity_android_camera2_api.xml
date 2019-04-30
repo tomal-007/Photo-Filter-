@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.jawad.mashmoment.AndroidCamera2API">
+    <com.example.jawad.mashmoment.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.example.jawad.mashmoment.AutoFitTextureView>
+    //android:layout_above="@+id/btn_takepicture"
+    />
+
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+
+        />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/shakib01"
+        android:scaleType="matrix"
+
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:id="@+id/overLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Moment"
+            android:textAllCaps="true"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimaryDark"
+            />
+        <HorizontalScrollView
+            android:id="@+id/horizontal_scroll"
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <!--
+                <ImageButton
+                    android:id="@+id/m1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="mashAction"
+                    android:src="@drawable/mash1" />
+
+                <ImageButton
+                    android:id="@+id/m2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="mashAction"
+                    android:src="@drawable/mash2" />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/m3"
+                    android:onClick="mashAction"
+                    android:src="@drawable/mash3"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/m4"
+                    android:onClick="mashAction"
+                    android:src="@drawable/mash4"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/m5"
+                    android:onClick="mashAction"
+                    android:src="@drawable/tam1"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/m6"
+                    android:onClick="mashAction"
+                    android:src="@drawable/tam2"
+                    />
+                    -->
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/s1"
+                    android:onClick="mashAction"
+                    android:src="@drawable/shakib1"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/s2"
+                    android:onClick="mashAction"
+                    android:src="@drawable/shakib2"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/s3"
+                    android:onClick="mashAction"
+                    android:src="@drawable/shakib3"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/s4"
+                    android:onClick="mashAction"
+                    android:src="@drawable/shakib4"
+                    />
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/s5"
+                    android:onClick="mashAction"
+                    android:src="@drawable/shakib5"
+                    />
+                <!--ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="mashAction"
+                    android:id="@+id/m5"
+                    android:src="@drawable/x"
+                    /-->
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="swap"
+        android:src="@drawable/swap"
+        android:id="@+id/button2"
+
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="gallery"
+        android:src="@drawable/gallery"
+        android:id="@+id/galleryButton"
+        android:layout_marginStart="18dp"
+        android:layout_alignParentRight="true"/>
+    <ImageButton
+        android:id="@+id/btn_takepicture"
+        android:background="@null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_weight="1"
+        android:src="@drawable/capture" />
+
+</RelativeLayout>

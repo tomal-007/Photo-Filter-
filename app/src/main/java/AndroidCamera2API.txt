@@ -1,0 +1,282 @@
+import android.graphics.BitmapRegionDecoder;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.AttributeSet;
+import android.util.FloatMath;
+
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.RandomAccessFile;
+import java.io.Serializable;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
+import com.bumptech.glide.Glide;
+import com.example.jawad.mashmoment.MyParcelable;
+
+private ImageButton swapButton;
+private Button take_now;
+private File file;
+
+/*take_now=(Button)findViewById(R.id.take_now);
+        take_now.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                takeScreenshot();
+            }
+        }) ;*/
+
+/*for (int i = 1; i <= 3; i++) {
+            VamChod lulli = new VamChod(this);
+            lulli.setPadding(2, 2, 2, 2);
+            lulli.setS("mash"+i+".png");
+            lulli.setScaleType(ImageView.ScaleType.FIT_XY);
+            lulli.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    //BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                    //Bitmap bitmap = drawable.getBitmap();
+                    VamChod lulli=(VamChod) v;
+                    ImageView view = (ImageView) findViewById(R.id.imageView);
+                    view.setImageBitmap(((BitmapDrawable) lulli.getDrawable()).getBitmap());
+                    mashId=lulli.getS();
+                }
+            }) ;
+            //layout.addView(lulli);
+        }*/
+
+lulli = (ImageButton) findViewById(R.id.m1);
+lulli = (ImageButton) findViewById(R.id.m2);
+lulli = (ImageButton) findViewById(R.id.m3);
+lulli = (ImageButton) findViewById(R.id.m4);
+/*case R.id.m5:
+                lulli = (ImageButton) findViewById(R.id.m5);
+                mashId = 5;
+                break;*/
+
+//view.setImageBitmap(((BitmapDrawable) lulli.getDrawable()).getBitmap());
+//o.matrix=matrix;
+private void takeScreenshot() {
+        Date now = new Date();
+        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
+
+        try {
+            // image naming and path  to include sd card  appending name you choose for file
+            String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
+
+            // create bitmap screen capture
+            View v1 = getWindow().getDecorView().getRootView();
+            v1.setDrawingCacheEnabled(true);
+
+            v1.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+            v1.buildDrawingCache();
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+            v1.destroyDrawingCache();
+            File imageFile = new File(mPath);
+
+            FileOutputStream outputStream = new FileOutputStream(imageFile);
+            int quality = 100;
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
+            outputStream.flush();
+            outputStream.close();
+
+
+        } catch (Throwable e) {
+            // Several error may come out with file handling or OOM
+            e.printStackTrace();
+        }
+    }
+//String fileName = "myImage1";
+        //no .png or .jpg needed
+        //String fileName2 = "myImage2";
+
+        //Toast.makeText(AndroidCamera2API.this, "values of f"+f.toString(), Toast.LENGTH_LONG).show();
+
+
+
+            //ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            //ByteArrayOutputStream bytes2 = new ByteArrayOutputStream();
+            //if(bmp!=null)
+            //    Log.d("test","width "+bmp.getWidth()+"height "+bmp.getHeight()+"\n");
+            //else
+            //    Log.d("null","bmp is null");
+            //bmp.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+            //bmp2.compress(Bitmap.CompressFormat.PNG, 100, bytes2);
+            //FileOutputStream fo = openFileOutput(fileName, Context.MODE_PRIVATE);
+            //FileOutputStream fo2 = openFileOutput(fileName2, Context.MODE_PRIVATE);
+            //fo.write(bytes.toByteArray());
+            //fo2.write(bytes2.toByteArray());
+            // remember close file output
+            //fo.close();
+            //fo2.close();
+
+            //Bundle b=new Bundle();
+            //b.putSerializable("transform",o);
+            //in1.putExtras(b);
+            //in1.putExtra("image2",fileName2);
+            //in1.putExtra("transform", o);
+
+            //Toast.makeText(AndroidCamera2API.this, "fuck before putextra transform in1 call", Toast.LENGTH_SHORT).show();
+            
+            //Toast.makeText(AndroidCamera2API.this, "fuck before intent in1 call", Toast.LENGTH_SHORT).show();
+            
+            //Toast.makeText(AndroidCamera2API.this, "Exception call"+e.toString(), Toast.LENGTH_SHORT).show();
+            //ImageView imageView=(ImageView)findViewById(R.id.imageView);
+                        //BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+                        //Bitmap bitmap = drawable.getBitmap();
+                        //bitmap=Bitmap.createBitmap(bitmap,0,0,bitmap.getWidth(),bitmap.getHeight(),savedMatrix,true);
+
+                        //ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        //imageView.setImageDrawable(new BitmapDrawable(bitmap));
+
+// buffer=null;
+
+
+                        //BitmapFactory.Options options=new BitmapFactory.Options();// Create object of bitmapfactory's option method for further option use
+                        ///options.inPurgeable = true; // inPurgeable is used to free up memory while required
+                        //Bitmap songImage1 = BitmapFactory.decodeByteArray(bytes,0, bytes.length,options);//Decode image, "thumbnail" is the object of image file
+                        //Bitmap songImage = Bitmap.createScaledBitmap(songImage1, 50 , 50 , true);// convert decoded bitmap into well scalled Bitmap format.
+
+                        //imageview.SetImageDrawable(songImage);
+                        //ByteArrayOutputStream bits = new ByteArrayOutputStream();
+                        Toast.makeText(AndroidCamera2API.this, "width " + usablebitmap.getWidth() + "height " + usablebitmap.getHeight() + "\n", Toast.LENGTH_LONG);
+              			
+
+
+
+                        //Bitmap usableImage=sex.copy(Bitmap.Config.ARGB_8888,true);
+                        //sex.recycle();
+                        //RandomAccessFile randomAccessFile = new RandomAccessFile(file, "rw");
+                        //bytes=null;
+// get the width and height of the source bitmap.
+                        //int width = sex.getWidth();
+                        //int height = sex.getHeight();
+
+//Copy the byte to the file
+//Assume source bitmap loaded using options.inPreferredConfig = Config.ARGB_8888;
+                        //FileChannel channel = randomAccessFile.getChannel();
+                        //MappedByteBuffer map = channel.map(FileChannel.MapMode.READ_WRITE, 0, width*height*4);
+                        //sex.copyPixelsToBuffer(map);
+//recycle the source bitmap, this will be no longer used.
+                        //sex.recycle();
+                        //sex=null;
+//Create a new bitmap to load the bitmap again.
+                        //sex = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                        //map.position(0);
+//load it back from temporary
+                        //sex.copyPixelsFromBuffer(map);
+//close the temporary file and channel , then delete that also
+                        //channel.close();
+                        //randomAccessFile.close();
+
+                        //sex.compress(Bitmap.CompressFormat.JPEG,100,stream);
+                        //ImageView z = (ImageView) findViewById(R.id.imageView);
+                        //z.setDrawingCacheEnabled(true);
+
+                        //Bitmap bitmap = Bitmap.createBitmap(z.getDrawingCache());
+                        //Toast.makeText(AndroidCamera2API.this, "fuck first stage", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(AndroidCamera2API.this, "fuck second stage", Toast.LENGTH_SHORT).show();
+                        //Log.d("sex",sex.getWidth()+" "+sex.getHeight());
+                        //Log.d("bitmap",bitmap.getWidth()+" "+bitmap.getHeight());
+
+                        //sex=Bitmap.createScaledBitmap(sex,bitmap.getWidth(),bitmap.getWidth(),false);
+
+                        //sex=Bitmap.createBitmap(sex, 0,0,sex.getWidth(), sex.getWidth());
+                        //bitmap=Bitmap.createBitmap(bitmap, 0,0,bitmap.getWidth(), bitmap.getWidth());
+
+                        //Log.d("scaled_sex",sex.getWidth()+" "+sex.getHeight());
+                        //Log.d("scaled_bitmap",bitmap.getWidth()+" "+bitmap.getHeight());
+
+                        //Bitmap bmOverlay = Bitmap.createBitmap(sex.getWidth(), sex.getHeight(), sex.getConfig());
+                        //Canvas canvas = new Canvas(bitmap);
+                        //canvas.drawBitmap(sex, 0,0, null);
+                        //canvas.drawBitmap(bitmap,0,0, null);
+                        //ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                        //OutputStream output = null;
+                        //output = new FileOutputStream(file);
+                        //sex.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+                        //output.close();
+                        //
+                        //bytes = stream.toByteArray();
+                       // save(bytes);
+
+        //RelativeLayout overlay = (RelativeLayout) findViewById(R.id.overlay);
+
+        //int previewWidth = ((AutoFitTextureView)findViewById(R.id.texture)).getMeasuredWidth(),
+        // previewHeight = ((AutoFitTextureView)findViewById(R.id.texture)).getMeasuredHeight();
+
+        //RelativeLayout.LayoutParams overlayParams = (RelativeLayout.LayoutParams) overlay.getLayoutParams();
+        //overlayParams.height = previewHeight - previewWidth;
+        //overlay.setLayoutParams(overlayParams);
+
+        /*RelativeLayout overlay;
+        overlay=(RelativeLayout)findViewById(R.id.overLay);
+        int previewWidth = ((AutoFitTextureView)findViewById(R.id.texture)).getMeasuredWidth();
+        int previewHeight = ((AutoFitTextureView)findViewById(R.id.texture)).getMeasuredHeight();
+        RelativeLayout.LayoutParams overlayParams = (RelativeLayout.LayoutParams) overlay.getLayoutParams();
+        overlayParams.height = previewHeight - previewWidth;
+        overlay.setLayoutParams(overlayParams);*/
+   public boolean onTouch(View v, MotionEvent event) {
+           // handle touch events here
+           ImageView view = (ImageView) v;
+           switch (event.getAction() & MotionEvent.ACTION_MASK) {
+               case MotionEvent.ACTION_DOWN:
+                   savedMatrix.set(p_matrix);
+                   start.set(event.getX(), event.getY());
+                   mode = DRAG;
+                   lastEvent = null;
+                   break;
+               case MotionEvent.ACTION_POINTER_DOWN:
+                   oldDist = spacing(event);
+                   if (oldDist > 10f) {
+                       savedMatrix.set(p_matrix);
+                       midPoint(mid, event);
+                       mode = ZOOM;
+                   }
+                   lastEvent = new float[4];
+                   lastEvent[0] = event.getX(0);
+                   lastEvent[1] = event.getX(1);
+                   lastEvent[2] = event.getY(0);
+                   lastEvent[3] = event.getY(1);
+                   d = rotation(event);
+                   break;
+               case MotionEvent.ACTION_UP:
+               case MotionEvent.ACTION_POINTER_UP:
+                   mode = NONE;
+                   lastEvent = null;
+                   break;
+               case MotionEvent.ACTION_MOVE:
+                   if (mode == DRAG) {
+                       p_matrix.set(savedMatrix);
+                       float dx = event.getX() - start.x;
+                       float dy = event.getY() - start.y;
+                       p_matrix.postTranslate(dx, dy);
+                   } else if (mode == ZOOM) {
+                       float newDist = spacing(event);
+                       if (newDist > 10f) {
+                           p_matrix.set(savedMatrix);
+                           float scale = (newDist / oldDist);
+                           p_matrix.postScale(scale, scale, mid.x, mid.y);
+                       }
+                       if (lastEvent != null) {
+                           newRot = rotation(event);
+                           float r = newRot - d;
+                           float[] values = new float[9];
+                           p_matrix.getValues(values);
+                           float tx = values[2];
+                           float ty = values[5];
+                           float sx = values[0];
+                           float xc = (view.getWidth() / 2) * sx;
+                           float yc = (view.getHeight() / 2) * sx;
+                           p_matrix.postRotate(r, tx + xc, ty + yc);
+                       }
+                   }
+                   break;
+           }
+           view.setImageMatrix(p_matrix);
+           return true;
+       }
